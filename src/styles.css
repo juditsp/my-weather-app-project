@@ -1,0 +1,123 @@
+body {
+  color: white;
+}
+
+h1 {
+  font-size: 35px;
+}
+h2,
+p {
+  text-align: center;
+}
+
+h2 {
+  font-size: 78px;
+}
+
+h5 {
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+#location {
+  font-size: 35px;
+  text-align: left;
+  font-weight: 500;
+}
+
+#location-date-temperature {
+  margin-top: 40px;
+}
+
+.container {
+  max-width: 807px;
+}
+.main-card {
+  background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
+  margin: 50px auto;
+  padding: 50px;
+  border: none;
+}
+.card-day {
+  background: rgb(189, 136, 166);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.search-button {
+  background: rgb(114, 25, 238);
+  border-color: rgb(114, 25, 238);
+  transition: all 150ms ease-in-out;
+}
+
+.current-button {
+  background: rgb(189, 154, 238);
+  border-color: rgb(189, 154, 238);
+  transition: all 150ms ease-in-out;
+}
+
+.search-button:hover {
+  background: rgb(189, 154, 238);
+  border-color: rgb(189, 154, 238);
+  color: white;
+  cursor: pointer;
+}
+
+.current-button:hover {
+  background: rgb(114, 25, 238);
+  border-color: rgb(114, 25, 238);
+  color: white;
+  cursor: pointer;
+}
+
+.main-emoji {
+  display: block;
+  margin: 0 auto;
+  width: 168px;
+  margin-top: 27px;
+}
+
+.weather-description {
+  text-align: center;
+  font-size: 25px;
+}
+
+.date-time {
+  font-size: 14px;
+  margin-top: 1px;
+  text-align: left;
+}
+
+.units {
+  position: relative;
+  top: -33px;
+  left: 2px;
+  font-size: 30px;
+}
+
+.forecast-5-day {
+  margin-top: 35px;
+}
+
+.factors-weather {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 97px;
+  margin-left: 29px;
+  line-height: 29px;
+}
+
+.forecast-emojis {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.forecast-max-temperature,
+.forecast-min-temperature {
+  font-size: 20px;
+}
+
+.forecast-max-temperature {
+  font-weight: 700;
+}
