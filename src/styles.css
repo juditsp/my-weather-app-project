@@ -18,6 +18,12 @@ h5 {
   font-size: 17px;
   margin-top: 10px;
 }
+small {
+  text-align: center;
+}
+a {
+  color: aliceblue;
+}
 
 #location {
   font-size: 35px;
