@@ -38,7 +38,7 @@ let months = [
 let month = months[currentDate.getMonth()];
 document.querySelector(
   "#date-time"
-).innerHTML = `${day}, ${month} ${year}, ${hours}:${minutes}`;
+).innerHTML = `${day}, ${month} ${year} │ ${hours}:${minutes}`;
 
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);

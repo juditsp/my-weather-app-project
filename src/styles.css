@@ -51,27 +51,29 @@ a {
 }
 
 .search-button {
-  background: rgb(114, 25, 238);
-  border-color: rgb(114, 25, 238);
+  background: #be02e4;
+  border-color: #be02e4;
   transition: all 150ms ease-in-out;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .current-button {
-  background: rgb(189, 154, 238);
-  border-color: rgb(189, 154, 238);
+  background: #be02e4;
+  border-color: #be02e4;
   transition: all 150ms ease-in-out;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .search-button:hover {
-  background: rgb(189, 154, 238);
-  border-color: rgb(189, 154, 238);
+  background: #e38cf4;
+  border-color: #e38cf4;
   color: white;
   cursor: pointer;
 }
 
 .current-button:hover {
-  background: rgb(114, 25, 238);
-  border-color: rgb(114, 25, 238);
+  background: #e38cf4;
+  border-color: #e38cf4;
   color: white;
   cursor: pointer;
 }
