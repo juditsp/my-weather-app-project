@@ -5,6 +5,7 @@ body {
 h1 {
   font-size: 35px;
 }
+h1,
 h2,
 p {
   text-align: center;
@@ -27,25 +28,25 @@ a {
 
 #location {
   font-size: 35px;
-  text-align: left;
+
   font-weight: 500;
 }
 
 #location-date-temperature {
-  margin-top: 40px;
+  margin-top: 41px;
 }
 
 .container {
   max-width: 807px;
 }
 .weather-app-wrapper {
+  margin: 50px auto;
   text-align: center;
-  margin: 30px auto;
 }
 .main-card {
   background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
-  margin: 50px auto;
-  padding: 50px;
+  margin: 15px auto;
+  padding: 30px;
   border: none;
 }
 .card-day {
@@ -96,8 +97,8 @@ a {
 
 .date-time {
   font-size: 14px;
-  margin-top: 1px;
-  text-align: left;
+  text-align: center;
+  margin-top: -6px;
 }
 
 .main-card .units {
@@ -116,7 +117,7 @@ a {
   font-size: 16px;
   margin-top: 90px;
   margin-left: 50px;
-  line-height: 30Reuspx;
+  line-height: 30px;
 }
 
 .forecast-emojis {
