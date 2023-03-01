@@ -22,13 +22,13 @@ h5 {
 small {
   color: black;
 }
-a {
-  color: black;
-}
 
+a {
+  text-decoration: none;
+  color: white;
+}
 #location {
   font-size: 35px;
-
   font-weight: 500;
 }
 
@@ -103,9 +103,9 @@ a {
 
 .main-card .units {
   position: relative;
-  font-size: 30px;
+  font-size: 21px;
   line-height: 1;
-  top: -33px;
+  top: -40px;
 }
 
 .forecast-5-day {
@@ -133,4 +133,9 @@ a {
 
 .forecast-max-temperature {
   font-weight: 700;
+}
+
+.github-link {
+  color: black;
+  text-decoration-line: none;
 }
