@@ -46,6 +46,12 @@ function showTemp(response) {
   document.querySelector("#temperature").innerHTML = `${temperature}ºC`;
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
+  document.querySelector("#humidity").innerHTML = Math.round(
+    response.data.temperature.humidity
+  );
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function enterCity(event) {
