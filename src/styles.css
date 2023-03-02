@@ -4,15 +4,11 @@ body {
 
 h1 {
   font-size: 35px;
+  font-weight: 500;
 }
 h1,
-h2,
 p {
   text-align: center;
-}
-
-h2 {
-  font-size: 78px;
 }
 
 h5 {
@@ -32,8 +28,18 @@ a {
   font-weight: 500;
 }
 
+#temperature {
+  font-size: 78px;
+  text-align: center;
+}
+
 #location-date-temperature {
   margin-top: 41px;
+}
+
+#weather-description {
+  text-align: center;
+  font-size: 25px;
 }
 
 .container {
@@ -91,11 +97,6 @@ a {
   margin-top: 27px;
 }
 
-.weather-description {
-  text-align: center;
-  font-size: 25px;
-}
-
 .date-time {
   font-size: 14px;
   text-align: center;
@@ -104,9 +105,9 @@ a {
 
 .main-card .units {
   position: relative;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1;
-  top: -40px;
+  top: -43px;
 }
 
 .forecast-5-day {

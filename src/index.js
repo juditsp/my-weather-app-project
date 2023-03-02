@@ -43,7 +43,9 @@ document.querySelector(
 function showTemp(response) {
   let temperature = Math.round(response.data.temperature.current);
   document.querySelector("#location").innerHTML = response.data.city;
-  document.querySelector("h2").innerHTML = `${temperature}ºC`;
+  document.querySelector("#temperature").innerHTML = `${temperature}ºC`;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.condition.description;
 }
 
 function enterCity(event) {
