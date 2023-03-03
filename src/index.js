@@ -1,14 +1,4 @@
-function addZero(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
-}
-
-let currentDate = new Date();
-let hours = currentDate.getHours();
-let minutes = addZero(currentDate.getMinutes());
-let year = currentDate.getFullYear();
+let date = new Date();
 let days = [
   "Sunday",
   "Monday",
@@ -17,10 +7,8 @@ let days = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
-
-let day = days[currentDate.getDay()];
+let day = days[date.getDay()];
 let months = [
   "January",
   "February",
@@ -35,7 +23,17 @@ let months = [
   "November",
   "December",
 ];
-let month = months[currentDate.getMonth()];
+let month = months[date.getMonth()];
+let year = date.getFullYear();
+
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+let hours = addZero(date.getHours());
+let minutes = addZero(date.getMinutes());
 document.querySelector(
   "#date-time"
 ).innerHTML = `${day}, ${month} ${year} │ ${hours}:${minutes}`;
@@ -46,9 +44,8 @@ function showTemp(response) {
   document.querySelector("#temperature").innerHTML = `${temperature}ºC`;
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.temperature.humidity
-  );
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
