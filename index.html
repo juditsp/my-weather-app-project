@@ -50,27 +50,29 @@
         <div class="row">
           <div class="col-4">
             <div>
-              <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" id="main-icon" />
+              <img src="" id="main-icon" />
             </div>
-            <p id="weather-description">Clear sky day</p>
+            <p id="weather-description"></p>
           </div>
           <div class="col-4" id="location-date-temperature">
             <div>
-              <h1 id="location">Barcelona</h1>
+              <h1 id="location"></h1>
                 <div>
-                <h2 id="temperature">19<span class="units">ºC</span><span class="units"><a href="#">│ºF</a></span></h2>
+                <strong id="temperature"></strong>
+                  <span class="units">
+                    <a href="#" id="celsius-link" class="active">ºC</a> |
+                    <a href="#" id="fahrenheit-link">ºF</a>
+                  </span>
               </div>
-              <p class="date-time" id="date-time">
-                Friday, January 2023 │ 10:30 AM
-              </p>
+              <p class="date-time" id="date-time"></p>
             </div>
           </div>
           <div class="col-4">
             <div>
               <p class="factors-weather">
-                Humidity: <span id="humidity">45</span>%
+                Humidity: <span id="humidity"></span>%
                 <br />
-                Wind Speed: <span id="wind">0</span>Km/h
+                Wind Speed: <span id="wind"></span> km/h
               </p>
             </div>
           </div>

@@ -39,32 +39,31 @@ document.querySelector(
 ).innerHTML = `${day}, ${month} ${year} │ ${hours}:${minutes}`;
 
 function showTemp(response) {
-  let temperature = Math.round(response.data.temperature.current);
-  document.querySelector("#location").innerHTML = response.data.city;
-  document.querySelector("#temperature").innerHTML = `${temperature}ºC`;
-  document.querySelector("#weather-description").innerHTML =
-    response.data.condition.description;
-  document.querySelector("#humidity").innerHTML =
-    response.data.temperature.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#location");
+  let descriptionElement = document.querySelector("#weather-description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#main-icon");
+
+  celsiusTemp = response.data.temperature.current;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  document
-    .querySelector("#main-icon")
-    .setAttribute(
-      "src",
-      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
-    );
-  document
-    .querySelector("#main-icon")
-    .setAttribute("alt", response.data.condition.description);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 function search(city) {
   let apiKey = "709f19ffdb2oca04113bc514793eb5bt";
-  let unit = "metric";
   let apiEndPoint = "https://api.shecodes.io/weather/v1/current";
-  let apiUrl = `${apiEndPoint}?query=${city}&key=${apiKey}&units=${unit}`;
+  let apiUrl = `${apiEndPoint}?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
 function handleSubmit(event) {
@@ -84,9 +83,30 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
-search("city");
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  let fahrentheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrentheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemp);
+}
+let celsiusTemp = null;
+
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
 let searchEngine = document.querySelector("#search-engine");
 searchEngine.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+search("Barcelona");
