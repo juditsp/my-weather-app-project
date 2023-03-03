@@ -86,6 +86,8 @@ function showPosition(position) {
 function showFahrenheitTemp(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrentheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperature.innerHTML = Math.round(fahrentheitTemp);
 }
@@ -93,6 +95,8 @@ function showFahrenheitTemp(event) {
 function showCelsiusTemp(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   temperature.innerHTML = Math.round(celsiusTemp);
 }
 let celsiusTemp = null;

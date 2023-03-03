@@ -16,7 +16,7 @@ small {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: rgb(189, 136, 166);
 }
 
 #location {
@@ -47,11 +47,6 @@ a {
   width: 168px;
   margin-top: 27px;
 }
-
-#fahrenheit-link {
-  color: rgb(189, 136, 166);
-}
-
 .container {
   max-width: 807px;
   min-width: 780px;
