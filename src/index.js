@@ -60,16 +60,17 @@ function showTemp(response) {
     .setAttribute("alt", response.data.condition.description);
 }
 
-function enterCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  document.querySelector("#location").innerHTML = `${cityInput.value}`;
+function search(city) {
   let apiKey = "709f19ffdb2oca04113bc514793eb5bt";
   let unit = "metric";
-  let city = document.querySelector("#city-input").value;
   let apiEndPoint = "https://api.shecodes.io/weather/v1/current";
   let apiUrl = `${apiEndPoint}?query=${city}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showTemp);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
 }
 
 function getCurrentPosition(event) {
@@ -83,8 +84,9 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
+search("city");
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
 let searchEngine = document.querySelector("#search-engine");
-searchEngine.addEventListener("submit", enterCity);
+searchEngine.addEventListener("submit", handleSubmit);
