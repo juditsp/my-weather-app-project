@@ -38,6 +38,35 @@ document.querySelector(
   "#date-time"
 ).innerHTML = `${day}, ${month} ${year} │ ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     <div class="col" id="forecast">
+            <div class="card card-day
+                <h5 class="forecast-day">${day}</h5>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+                  alt
+                  width="68px"
+                  class="forecast-emojis"
+                />
+                <div class="weather-forecast-temperature">
+                  <span class="forecast-max-temperature">16º</span>
+                  <span class="forecast-min-temperature">2º</span>
+                </div>
+            </div>
+          </div>    
+                       `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#location");
@@ -114,3 +143,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("Barcelona");
+displayForecast();
