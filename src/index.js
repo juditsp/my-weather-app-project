@@ -23,8 +23,6 @@ let months = [
   "November",
   "December",
 ];
-let month = months[date.getMonth()];
-let year = date.getFullYear();
 
 function addZero(i) {
   if (i < 10) {
@@ -36,7 +34,7 @@ let hours = addZero(date.getHours());
 let minutes = addZero(date.getMinutes());
 document.querySelector(
   "#date-time"
-).innerHTML = `${day}, ${month} ${year} │ ${hours}:${minutes}`;
+).innerHTML = `Last updated: ${day}, ${hours}:${minutes}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -141,34 +139,10 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrentheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrentheitTemp);
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  temperature.innerHTML = Math.round(celsiusTemp);
-}
-let celsiusTemp = null;
-
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
 let searchEngine = document.querySelector("#search-engine");
 searchEngine.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("Barcelona");

@@ -68,6 +68,10 @@ a {
   background: rgb(189, 136, 166);
   text-align: center;
   margin-top: 10px;
+  transition: all 150ms ease-in-out;
+}
+.card-day:hover {
+  transform: scale(1.1);
 }
 
 .search-button {
@@ -98,16 +102,16 @@ a {
   cursor: pointer;
 }
 .date-time {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  margin-top: 14px;
+  margin-top: 15px;
 }
 
 .main-card .units {
   position: relative;
   font-size: 20px;
   line-height: 1;
-  top: -43px;
+  top: -40px;
 }
 
 .units .active {
@@ -140,9 +144,4 @@ a {
 
 .forecast-max-temperature {
   font-weight: 700;
-}
-
-.github-link {
-  color: black;
-  text-decoration-line: none;
 }
