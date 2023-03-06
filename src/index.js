@@ -38,26 +38,47 @@ document.querySelector(
   "#date-time"
 ).innerHTML = `${day}, ${month} ${year} │ ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `     <div class="col" id="forecast">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5)
+      forecastHTML =
+        forecastHTML +
+        `     <div class="col" id="forecast">
             <div class="card card-day
-                <h5 class="forecast-day">${day}</h5>
+                <h5 class="forecast-day">${formatDay(forecastDay.time)}</h5>
                 <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                  }.png"
                   alt
                   width="68px"
                   class="forecast-emojis"
                 />
                 <div class="weather-forecast-temperature">
-                  <span class="forecast-max-temperature">16º</span>
-                  <span class="forecast-min-temperature">2º</span>
+                  <span class="forecast-max-temperature">${Math.round(
+                    forecastDay.temperature.maximum
+                  )}º</span>
+                  <span class="forecast-min-temperature">${Math.round(
+                    forecastDay.temperature.minimum
+                  )}º</span>
                 </div>
             </div>
           </div>    
